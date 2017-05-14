@@ -1,0 +1,24 @@
+.book {
+  border: 1px rgba(0, 0, 0, 0.3) solid;
+  box-sizing: border-box;
+  width: 100%;
+}
+.imageDiv {
+    margin-left: 3%;
+    margin-top: 30px;
+    width: 30%;
+    float: left;
+}
+.imageDiv img {
+    width: 200px;
+    height: 300px;
+}
+.contentDiv {
+    display: inline-block;
+    width: 65%;
+    padding-bottom: 100px;
+}
+.controlsDiv {
+    text-align: right;
+    height: 50px;
+}

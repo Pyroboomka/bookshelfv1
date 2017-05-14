@@ -1,0 +1,9 @@
+input {
+    display: block;
+}
+
+.errorDiv {
+    border: 1px rgba(255, 0, 0, 0.45) solid;
+    text-align: center;
+    margin-bottom: 25px;
+}
