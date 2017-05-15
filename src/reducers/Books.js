@@ -1,20 +1,15 @@
 //import { combineReducers } from 'redux'
-import { ADD_BOOK, SAVE_BOOK, TOGGLE_BOOK } from '../actions'
+import { ADD_BOOK, SAVE_BOOK, TOGGLE_BOOK, DELETE_BOOK } from '../actions'
 
 function books (state = [], action) {
     switch (action.type) {
         case ADD_BOOK: 
             return [
                 ...state,
-                {
-                    id: action.id,
-                    title: action.book.title,
-                    author: action.book.author,
-                    image: action.book.image,
-                    description: action.book.description,
-                    dateAdded: action.book.dateAdded,
-                    isEditable: false 
-                }
+                Object.assign({}, action.book, {
+                    id: action.id, 
+                    isEditable: false
+                })
             ]
         case SAVE_BOOK:
             return state.map((book) => {
@@ -24,12 +19,14 @@ function books (state = [], action) {
                 return book
             })
         case TOGGLE_BOOK:
-            return state.map((book)=> {
+            return state.map((book) => {
                 if (book.id === action.id) {
                     return Object.assign({}, book, {isEditable: !book.isEditable})
                 }
                 return book
             })
+        case DELETE_BOOK:
+            return state.filter(book => book.id !== action.id)
         default:
             return state
     }

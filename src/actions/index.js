@@ -2,6 +2,7 @@
 export const ADD_BOOK = 'ADD_BOOK'
 export const SAVE_BOOK = 'SAVE_BOOK'
 export const TOGGLE_BOOK = 'TOGGLE_BOOK'
+export const DELETE_BOOK = 'DELETE_BOOK'
 
 //action creators
 //Including sample books
@@ -25,6 +26,12 @@ export function saveBook(id, newBook) {
 export function toggleBook(id) {
     return {
         type: TOGGLE_BOOK,
+        id
+    }
+}
+export function deleteBook(id) {
+    return {
+        type: DELETE_BOOK,
         id
     }
 }

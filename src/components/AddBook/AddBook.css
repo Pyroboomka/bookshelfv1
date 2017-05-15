@@ -1,9 +1,13 @@
 input {
-    display: block;
+    width: 300px;
 }
 
 .errorDiv {
     border: 1px rgba(255, 0, 0, 0.45) solid;
     text-align: center;
     margin-bottom: 25px;
+}
+.addBookDiv {
+   display: flex;
+   justify-content: center;
 }

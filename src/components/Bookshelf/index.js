@@ -5,7 +5,7 @@ import EditBook from '../EditBook'
 import { history } from '../../'
 import './Bookshelf.css' 
 
-const Bookshelf = ({books, onEditToggle, onSaveClick}) => (
+const Bookshelf = ({books, onEditToggle, onSaveClick, onDeleteClick}) => (
     <div>
         <button className='addBookButton' onClick={()=>history.push('/add')}>Add a new book</button>
         {books.map(book => {
@@ -20,14 +20,15 @@ const Bookshelf = ({books, onEditToggle, onSaveClick}) => (
             else {
                 return (
                     <Book key={book.id}
-                          {...book}
-                          onEditToggle={() => {onEditToggle(book.id)}}>
+                          book={book}
+                          onEditToggle={() => {onEditToggle(book.id)}}
+                          onDeleteClick={() => {onDeleteClick(book.id)}}>
                     </Book>
                 )
             }
         }            
         )}
-     </div>
+    </div>
 )
 
 Bookshelf.PropTypes = {

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { toggleBook, saveBook } from '../../actions'
+import { toggleBook, saveBook, deleteBook } from '../../actions'
 import Bookshelf from '../../components/Bookshelf'
 
 const getFilteredBooks = (books, filter) => {
@@ -7,8 +7,19 @@ const getFilteredBooks = (books, filter) => {
         case 'SHOW_ALL': {
             return books
         }
-        case 'FILTER_BY_NAME': {
-            return books.filter(book => {return (book.title).includes(filter.content)} )
+        case 'FILTER': {
+            return books.filter(book => {
+                let isNotFiltered = false;
+                for (let field in book)
+                {
+                    if (field === 'title' || field === 'author') {
+                        if (book[field].toLowerCase().includes(filter.content.toLowerCase())) {
+                            isNotFiltered = true;
+                        }
+                    }
+                }
+                return isNotFiltered;
+            })
         }
         default:
             return books
@@ -27,6 +38,9 @@ const mapDispatchToProps = (dispatch) => {
             },
         onSaveClick: (id, newBook) => {
             dispatch(saveBook(id, newBook))
+        },
+        onDeleteClick : (id) => {
+            dispatch(deleteBook(id))
         }
     }
 }

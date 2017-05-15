@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 
 import { Route } from 'react-router'
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
+import { ConnectedRouter, routerReducer, routerMiddleware} from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 
 import './index.css';
@@ -30,9 +30,6 @@ const store = createStore(
     )
 
 const MOUNT_NODE = document.getElementById('root')
-// Now you can dispatch navigation actions from anywhere!
-// store.dispatch(push('/foo'))
-
 
 ReactDOM.render(
   <Provider store={store}>
@@ -47,3 +44,4 @@ ReactDOM.render(
 );
 
 export { history }
+

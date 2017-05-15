@@ -14,7 +14,7 @@ class Searchbar extends Component {
             searchInput: e.target.value
         }, () => {
             this.props.onSearchButtonClick({
-                 type:'FILTER_BY_NAME',
+                 type:'FILTER',
                  content: this.state.searchInput
                 })
               }
@@ -24,8 +24,8 @@ class Searchbar extends Component {
     render() {
         return (
             <div className='searchBar'> 
-                <label>Search books by title</label>
-                <input type='text' value={this.state.searchInput} onChange={this.handleChange.bind(this)} />
+                <label>Search books</label>
+                <input type='text' placeholder='Type here!' value={this.state.searchInput} onChange={this.handleChange.bind(this)} />
             </div>
         )
     }
