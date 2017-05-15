@@ -7,10 +7,12 @@ Don't do this magic with index.js files and folders, it's very bad for your ment
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 - [Installation:]
+```
   - git clone https://github.com/Pyroboomka/bookshelfv1
   - cd bookshelfv1
   - npm i
   - cd src
+  ```
 
 - [Available Scripts]
   - [npm start](#npm-start)
