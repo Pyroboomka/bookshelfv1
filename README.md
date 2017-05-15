@@ -11,7 +11,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   git clone https://github.com/Pyroboomka/bookshelfv1
   cd bookshelfv1
   npm i
-  cd src
   ```
 
 - [Available Scripts]
