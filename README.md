@@ -9,4 +9,3 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
   - [npm run eject](#npm-run-eject)
-- 
